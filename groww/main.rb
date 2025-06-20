@@ -63,10 +63,10 @@ class ClosePrice
 end
 
 def seleniumInit(url)
-    options = Selenium::WebDriver::Chrome::Options.new
-    options.add_argument("--headless")
+    # options = Selenium::WebDriver::Chrome::Options.new
+    # options.add_argument("--headless")
 
-    driver = Selenium::WebDriver.for :chrome, options: options
+    driver = Selenium::WebDriver.for :chrome#, options: options
     driver.get(url)
     driver
 end
@@ -141,12 +141,12 @@ def addFilters(driver)
 
     index(["Nifty 50", "Nifty 100"], driver)
 
-    MarketCaps.marketCap_value("100", "500000", driver)
+    # MarketCaps.marketCap_value("1000", "500000", driver)
     # MarketCaps.marketCap_button("Small", driver)
-    # MarketCaps.marketCap_drag(3, 5, driver)
+    MarketCaps.marketCap_drag(2, 7, driver)
 
-    ClosePrice.closePrice_value("100", "500000", driver)
-    # ClosePrice.closePrice_drag(3, 8, driver)
+    # ClosePrice.closePrice_value("1000", "500000", driver)
+    ClosePrice.closePrice_drag(3, 8, driver)
 end
 
 def main()
@@ -154,9 +154,10 @@ def main()
     driver = seleniumInit(url)
 
     addFilters(driver)
+    sleep 20
 
     store_data = pageParse(driver)
-    csvCreate("Groww.csv",store_data)
+    csvCreate("groww_output.csv",store_data)
 end
 
 main()

@@ -78,11 +78,11 @@ def main
     url = "https://www.moneycontrol.com/markets/stock-ideas/"
     driver = seleniumInit(url)
 
-    max_time = 120
+    max_time = 60
     store_data = pageParse(driver, max_time)
     driver.quit
 
-    csvCreate("money_control.csv", store_data)
+    csvCreate("moneycontrol_output.csv", store_data)
 end
 
 main()
