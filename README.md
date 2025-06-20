@@ -8,7 +8,7 @@
 - This project scrapes the latest stock recommendations from MoneyControl's stock ideas page (https://www.moneycontrol.com/markets/stock-ideas/).
 - Handles dynamic content loading to collect stock idea cards.
 
-### Groww
+## Groww
 
 - This project extracts stock data from Groww’s stock screener page (https://groww.in/stocks/filter).
 - The script handles pagination to systematically navigate through all available pages of stock listings, applying filters such as Sector, Index, Market Cap (Cr), and Close Price.
